@@ -13,12 +13,24 @@
 			'Docker',
 			'RabbitMQ'
 		],
-		['MongoDB', 'PostgreSQL', 'Redis', 'Jest', 'Elasticsearch']
+		['MongoDB', 'MySQL', 'Redis', 'Jest', 'Elasticsearch', 'K6']
 	];
 
 	let works = [
 		{
-			dateRange: 'November 2021 - Current',
+			dateRange: 'March 2022 - Current',
+			roleAndCompany: 'Software Engineer | Purple Ventures Co., Ltd',
+			desc: [
+				'Developed key features and maintenance for ev platform.',
+				'Assist team ride hailing enhance new feature and improve using Nestjs, Google fleet engine and Google Map API.',
+				'Coordinated with other services to ensure seamless integration of the company is software products.',
+				'Create unit test coverage 80% support use case new feature reduce issue.',
+				'Utilized Agile methodologies to manage several software.'
+			],
+			techStacks: ['NestJS', 'Go', 'Redis', 'Elasticsearch', 'MySQL', 'Jest']
+		},
+		{
+			dateRange: 'November 2021 - December 2022',
 			roleAndCompany: 'Backend Developer | Conicle Co., Ltd',
 			desc: [
 				'Developed key features for an e-learning platform, utilizing Agile methodologies to ensure timely delivery.',
@@ -82,16 +94,24 @@
 </script>
 
 <svelte:head>
-	<title>NU | Portfolio</title>
-	<meta name="description" content="nuchaiwongthon is me" />
+	<title>NU | Web Developer</title>
+	<meta
+		name="description"
+		content="Explore the portfolio of NU, a skilled web developer and designer. Specializing in modern web development and creative design solutions."
+	/>
+	<meta
+		name="keywords"
+		content="NU, web developer, portfolio, web design, front-end developer, UI/UX, Svelte, JavaScript, responsive design"
+	/>
+	<meta name="author" content="NU" />
 </svelte:head>
 
 <div class="container mx-auto px-4">
-	<div class="introduction-wrapper">
+	<div class="introduction-wrapper" id="introduction">
 		<div class="self-center">
 			<P size="lg" class="pb-4" color="">Hi, my name's</P>
 			<div class="custom-font">
-				<Heading tag="h1" customSize="text-4xl font-extrabold md:text-5xl lg:text-7xl" color=""
+				<Heading tag="h1" customSize="text-4xl md:text-5xl lg:text-7xl" color=""
 					>PANUWAT CHAIWONGTHON</Heading
 				>
 			</div>
@@ -106,9 +126,9 @@
 		</div>
 	</div>
 
-	<div class="about-wrapper">
+	<div class="about-wrapper" id="about-us">
 		<div class="self-center">
-			<Heading tag="h3" customSize="text-1xl font-extrabold md:text-1xl lg:text-3xl" color=""
+			<Heading tag="h3" customSize="text-2xl font-extrabold md:text-3xl" color=""
 				>About Us</Heading
 			>
 			<br />
@@ -119,10 +139,14 @@
 						class="pb-4"
 						color=""
 						firstupper
-						upperClass="first-line:tracking-widest first-letter:text-6xl first-letter:font-bold first-letter:mr-3 first-letter:float-left"
+						upperClass="first-line:tracking-widest first-letter:text-6xl first-letter:font-bold first-letter:mr-3 first-letter:float-left leading-7"
 					>
-						I'm a software developer. Have experience role developer more than 4 years. I interested
-						population programming languages. It's exciting to try new things. I added to open it!.
+						I' m take role full stack developer with 4 years of experience in designing and
+						implementing robust systems. Proficient in programming language including Javascript and
+						Typescript. Proven track record in database management, and cloud-based solutions. Adept
+						at collaborating with cross-functional teams to deliver high-quality software products.
+						Passionate about staying up-to-date with emerging technologies and integrating them into
+						development processes.
 					</P>
 					<br />
 					<P size="base" color="">Here are a few technologies I’ve been working with recently:</P>
@@ -170,10 +194,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="px-4 justify-self-center">
+				<div class="justify-self-center">
 					<Img
 						src={me}
-						size="max-w-sm"
+						size="max-w"
 						alt="Me"
 						class="rounded-lg transition-all duration-300 cursor-pointer filter sepia hover:sepia-0"
 						caption="Me >.<"
@@ -183,11 +207,9 @@
 		</div>
 	</div>
 
-	<div class="work-wrapper">
-		<Heading
-			tag="h2"
-			customSize="text-1xl font-extrabold md:text-1xl lg:text-3xl"
-			color="color-text">Work Experience</Heading
+	<div class="work-wrapper" id="experience">
+		<Heading tag="h2" customSize="text-2xl font-extrabold md:text-3xl" color=""
+			>Work Experience</Heading
 		>
 		<br />
 		<Timeline>
@@ -206,10 +228,10 @@
 						{/each}
 					</div>
 
-					<div>
+					<div class="flex flex-wrap gap-2 sm:gap-5">
 						{#each work.techStacks as techStacks}
 							<Kbd
-								class="px-2 py-1.5 mx-2"
+								class="px-2 py-1.5"
 								kbdClass="text-sm font-semibold text-gray-700 bg-gray-100 border border-gray-200 rounded-lg"
 								>{techStacks}</Kbd
 							>

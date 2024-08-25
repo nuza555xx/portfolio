@@ -3,16 +3,19 @@
 	import { Navbar, NavUl, NavLi, NavBrand } from 'flowbite-svelte';
 </script>
 
-<div class="sticky top-0">
-	<Navbar color="none" let:hidden>
+<div class="sticky top-0 z-10">
+	<Navbar color="none" class="bg-[var(--color-bg)]" let:hidden>
 		<NavBrand href="/">
 			<img src={logo} class="mr-3 h-6 sm:h-9" alt="nu logo" />
 		</NavBrand>
-		<NavUl {hidden} nonActiveClass="">
-			<NavLi>Introduction</NavLi>
-			<NavLi>About Us</NavLi>
-			<NavLi>Experience</NavLi>
-			<NavLi>Contact</NavLi>
+		<NavUl
+			{hidden}
+			nonActiveClass="cursor-pointer transition-all 2s text-[var(--color-text)] hover:text-white"
+		>
+			<NavLi><a href="#introduction">Introduction</a></NavLi>
+			<NavLi><a href="#about-us">About Us</a></NavLi>
+			<NavLi><a href="#experience">Experience</a></NavLi>
+			<!-- <NavLi>Contact</NavLi> -->
 		</NavUl>
 	</Navbar>
 </div>
